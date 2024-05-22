@@ -1,9 +1,13 @@
-﻿  KURSV_OOP.cpp
+﻿  Car.cpp
+C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\KURSV_OOP\Car.cpp(111,9): warning C4984: "if constexpr" — расширение языка C++17
+C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\KURSV_OOP\Car.h(18,10): message : Сообщение диагностики возникло в созданной компилятором функции "void Car::Search(T,const std::string &)"
+C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\KURSV_OOP\Car.cpp(114,14): warning C4984: "if constexpr" — расширение языка C++17
+C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\KURSV_OOP\Car.h(18,10): message : Сообщение диагностики возникло в созданной компилятором функции "void Car::Search(T,const std::string &)"
      Создается библиотека C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\x64\Release\KURSV_OOP.lib и объект C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\x64\Release\KURSV_OOP.exp
   Создание кода
-  2 of 400 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+  2 of 454 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    2 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
 mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: "" PDB не найден с "mysqlcppconn-static.lib(mysql_driver.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: "" PDB не найден с "mysqlcppconn-static.lib(mysql_connection.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
