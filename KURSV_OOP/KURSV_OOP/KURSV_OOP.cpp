@@ -9,6 +9,8 @@
 #include "CarBrand.h"
 #include "Manufacturer.h"
 #include "Car.h"
+#include "Part.h"
+#include "Component.h"
 
 
 void for_SW()
@@ -418,6 +420,146 @@ void for_Car()
 	}
 }
 
+void for_Part()
+{
+	setlocale(LC_ALL, "ru");
+	Part part;
+	PartStoreWorker partStoreWorker;
+	string name, date;
+	int id_PSW;
+	int a = 1, id;
+
+	while (a != 0)
+	{
+		cout << "\tДетали" << endl;
+		cout << " 1 - Добавить деталь" << endl;
+		cout << " 2 - Обновить информацию о детали" << endl;
+		cout << " 3 - Удалить деталь" << endl;
+		cout << " 4 - Вывести список деталей" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case(1):
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите название детали: ";
+			getline(cin, name);
+			cout << "Список ответственных работников магазина деталей:" << endl;
+			partStoreWorker.Print();
+			cout << "Введите ID ответственного работника магазина деталей: ";
+			cin >> id_PSW;
+			cout << "Введите дату: ";
+			cin >> date;
+			part.Insert(name, id_PSW, date);
+			break;
+		case 2:
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите ID детали, которую хотите обновить: ";
+			cin >> id;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите новое название детали: ";
+			getline(cin, name);
+			cout << "Список ответственных работников магазина деталей:" << endl;
+			partStoreWorker.Print();
+			cout << "Введите ID ответственного работника магазина деталей: ";
+			cin >> id_PSW;
+			cout << "Введите новую дату: ";
+			cin >> date;
+			part.Update(id, name, id_PSW, date);
+			break;
+		case 3:
+			system("cls");
+			cout << "Введите ID детали, которую хотите удалить: ";
+			cin >> id;
+			part.Delete(id);
+			break;
+		case 4:
+			system("cls");
+			part.Print();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void for_Component()
+{
+	setlocale(LC_ALL, "ru");
+	Component component;
+	Part part;
+	ServiceWorker serviceWorker;
+	string name, date;
+	int id_part1, id_part2, id_SW;
+	int a = 1, id;
+
+	while (a != 0)
+	{
+		cout << "\tКомпоненты" << endl;
+		cout << " 1 - Добавить компонент" << endl;
+		cout << " 2 - Обновить информацию о компоненте" << endl;
+		cout << " 3 - Удалить компонент" << endl;
+		cout << " 4 - Вывести список компонентов" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите имя компонента: ";
+			getline(cin, name);
+			cout << "Введите дату: ";
+			getline(cin, date);
+			cout << "Список частей:" << endl;
+			part.Print();
+			cout << "Введите ID первой части: ";
+			cin >> id_part1;
+			cout << "Введите ID второй части: ";
+			cin >> id_part2;
+			cout << "Список работников сервиса:" << endl;
+			serviceWorker.Print();
+			cout << "Введите ID работника сервиса: ";
+			cin >> id_SW;
+			component.Insert(name, date, id_part1, id_part2, id_SW);
+			break;
+		case 2:
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите ID компонента, который хотите обновить: ";
+			cin >> id;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите новое имя компонента: ";
+			getline(cin, name);
+			cout << "Введите новую дату: ";
+			getline(cin, date);
+			cout << "Список частей:" << endl;
+			part.Print();
+			cout << "Введите ID первой части: ";
+			cin >> id_part1;
+			cout << "Введите ID второй части: ";
+			cin >> id_part2;
+			cout << "Список работников сервиса:" << endl;
+			serviceWorker.Print();
+			cout << "Введите ID работника сервиса: ";
+			cin >> id_SW;
+			component.Update(id, name, date, id_part1, id_part2, id_SW);
+			break;
+		case 3:
+			system("cls");
+			cout << "Введите ID компонента, который хотите удалить: ";
+			cin >> id;
+			component.Delete(id);
+			break;
+		case 4:
+			system("cls");
+			component.Print();
+			break;
+		default:
+			break;
+		}
+	}
+}
 
 int main()
 {
@@ -434,6 +576,8 @@ int main()
 		cout << " 4 - Действия с CarBrand " << endl;
 		cout << " 5 - Действия с Manufacturer " << endl;
 		cout << " 6 - Действия с Car " << endl;
+		cout << " 7 - Действия с Part " << endl;
+		cout << " 8 - Действия с Component " << endl;
 		cout << "exit 0" << endl;
 		cin >> a;
 		switch (a) {
@@ -454,6 +598,12 @@ int main()
 			break;
 		case(6):
 			for_Car();
+			break;
+		case(7):
+			for_Part();
+			break;
+		case(8):
+			for_Component();
 			break;
 		default:
 			break;

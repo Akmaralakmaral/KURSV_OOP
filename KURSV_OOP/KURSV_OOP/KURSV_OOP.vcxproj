@@ -132,19 +132,23 @@
   <ItemGroup>
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarBrand.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Country.cpp" />
     <ClCompile Include="KURSV_OOP.cpp" />
     <ClCompile Include="Manufacturer.cpp" />
+    <ClCompile Include="Part.cpp" />
     <ClCompile Include="PartStoreWorker.cpp" />
     <ClCompile Include="ServiceWorker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarBrand.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Connect.h" />
     <ClInclude Include="Country.h" />
     <ClInclude Include="Manufacturer.h" />
+    <ClInclude Include="Part.h" />
     <ClInclude Include="PartStoreWorker.h" />
     <ClInclude Include="ServiceWorker.h" />
     <ClInclude Include="User.h" />
