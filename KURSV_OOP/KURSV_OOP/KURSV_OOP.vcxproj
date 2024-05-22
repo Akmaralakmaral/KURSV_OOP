@@ -132,9 +132,12 @@
   <ItemGroup>
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="KURSV_OOP.cpp" />
+    <ClCompile Include="ServiceWorker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Connect.h" />
+    <ClInclude Include="ServiceWorker.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
