@@ -130,12 +130,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CarBrand.cpp" />
     <ClCompile Include="Connect.cpp" />
+    <ClCompile Include="Country.cpp" />
     <ClCompile Include="KURSV_OOP.cpp" />
+    <ClCompile Include="PartStoreWorker.cpp" />
     <ClCompile Include="ServiceWorker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CarBrand.h" />
     <ClInclude Include="Connect.h" />
+    <ClInclude Include="Country.h" />
+    <ClInclude Include="PartStoreWorker.h" />
     <ClInclude Include="ServiceWorker.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
