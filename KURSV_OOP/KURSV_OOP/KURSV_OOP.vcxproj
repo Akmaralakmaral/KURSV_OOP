@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Assembly.cpp" />
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="CarBrand.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="ServiceWorker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assembly.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarBrand.h" />
     <ClInclude Include="Component.h" />

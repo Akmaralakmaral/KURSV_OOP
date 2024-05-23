@@ -11,6 +11,7 @@
 #include "Car.h"
 #include "Part.h"
 #include "Component.h"
+#include "Assembly.h"
 
 
 void for_SW()
@@ -561,6 +562,79 @@ void for_Component()
 	}
 }
 
+void for_Assembly()
+{
+	setlocale(LC_ALL, "ru");
+	Assembly assembly;
+	ServiceWorker serviceWorker;
+	Car car;
+	string name, date;
+	int id_SW, id_car;
+	int a = 1, id;
+
+	while (a != 0)
+	{
+		cout << "\tСборки" << endl;
+		cout << " 1 - Добавить сборку" << endl;
+		cout << " 2 - Обновить информацию о сборке" << endl;
+		cout << " 3 - Удалить сборку" << endl;
+		cout << " 4 - Вывести список сборок" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите имя сборки: ";
+			getline(cin, name);
+			cout << "Введите дату: ";
+			getline(cin, date);
+			cout << "Список работников сервиса:" << endl;
+			serviceWorker.Print();
+			cout << "Введите ID работника сервиса: ";
+			cin >> id_SW;
+			cout << "Список автомобилей:" << endl;
+			car.Print();
+			cout << "Введите ID автомобиля: ";
+			cin >> id_car;
+			assembly.Insert(name, date, id_SW, id_car);
+			break;
+		case 2:
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите ID сборки, которую хотите обновить: ";
+			cin >> id;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Введите новое имя сборки: ";
+			getline(cin, name);
+			cout << "Введите новую дату: ";
+			getline(cin, date);
+			cout << "Список работников сервиса:" << endl;
+			serviceWorker.Print();
+			cout << "Введите ID работника сервиса: ";
+			cin >> id_SW;
+			cout << "Список автомобилей:" << endl;
+			car.Print();
+			cout << "Введите ID автомобиля: ";
+			cin >> id_car;
+			assembly.Update(id, name, date, id_SW, id_car);
+			break;
+		case 3:
+			system("cls");
+			cout << "Введите ID сборки, которую хотите удалить: ";
+			cin >> id;
+			assembly.Delete(id);
+			break;
+		case 4:
+			system("cls");
+			assembly.Print();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 int main()
 {
 	setlocale(LC_ALL, "ru");
@@ -578,6 +652,7 @@ int main()
 		cout << " 6 - Действия с Car " << endl;
 		cout << " 7 - Действия с Part " << endl;
 		cout << " 8 - Действия с Component " << endl;
+		cout << " 9 - Действия с Assembly " << endl;
 		cout << "exit 0" << endl;
 		cin >> a;
 		switch (a) {
@@ -604,6 +679,9 @@ int main()
 			break;
 		case(8):
 			for_Component();
+			break;
+		case(9):
+			for_Assembly();
 			break;
 		default:
 			break;
