@@ -1,9 +1,9 @@
-﻿  KURSV_OOP.cpp
+﻿  History.cpp
      Создается библиотека C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\x64\Release\KURSV_OOP.lib и объект C:\Users\Акмарал\Desktop\3 КУРС ВЕСЕННИЙ СЕМЕСТР\ООП\Новая папка\KURSV_OOP\x64\Release\KURSV_OOP.exp
   Создание кода
-  114 of 536 functions (21.3%) were compiled, the rest were copied from previous compilation.
-    18 functions were new in current compilation
-    66 functions had inline decision re-evaluated but remain unchanged
+  3 of 562 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
 mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: "" PDB не найден с "mysqlcppconn-static.lib(mysql_driver.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: "" PDB не найден с "mysqlcppconn-static.lib(mysql_connection.obj)" или на ""; компоновка объекта выполняется как при отсутствии отладочных данных

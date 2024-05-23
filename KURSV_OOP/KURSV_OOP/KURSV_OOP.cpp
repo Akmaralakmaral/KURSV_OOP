@@ -13,6 +13,8 @@
 #include "Component.h"
 #include "Assembly.h"
 #include "MakeAssembly.h"
+#include "MakeCar.h"
+#include "History.h"
 
 
 void for_SW()
@@ -317,6 +319,87 @@ void for_Manufacturer()
 	}
 }
 
+void for_MakeCar()
+{
+	setlocale(LC_ALL, "ru");
+	MakeCar makeCar;
+	Assembly assembly;
+	Car car;
+
+	string name;
+	int a = 1, id_car, id, quantity;
+	float id_assem;
+
+	while (a != 0)
+	{
+		cout << "\tСтраны" << endl;
+		cout << " 1 - Добавить агрегат для машины" << endl;
+		cout << " 2 - Обновить информацию о агрегат" << endl;
+		cout << " 3 - Удалить агрегат" << endl;
+		cout << " 4 - Вывести список агрегат для выбранной машины" << endl;
+		cout << " 5 - Вывести список машин для выбранного агрегата" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case(1):
+			system("cls");
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			car.Print();
+			cout << "Выберите машину: ";
+			cin >> id_car;
+			assembly.Print();
+			cout << "Выберите Агрегат: ";
+			cin >> id_assem;
+
+			cout << "Количество: ";
+			cin >> quantity;
+			makeCar.Insert(id_car, id_assem, quantity);
+			break;
+		case 2:
+			system("cls");
+			car.Print();
+			cout << "Выберите машину: ";
+			cin >> id_car;
+			makeCar.Print(id_car);
+			cout << "Выберите Агрегат: ";
+			cin >> id;
+			assembly.Print();
+			cout << "Выберите нового Агрегат: ";
+			cin >> id_assem;
+			cout << "Количество: ";
+			cin >> quantity;
+			makeCar.Update(id, id_assem, quantity);
+
+			break;
+		case 3:
+			system("cls");
+			car.Print();
+			cout << "Выберите машину: ";
+			cin >> id_car;
+			makeCar.Print(id_car);
+			cout << "Выберите Агрегат: ";
+			cin >> id;
+			makeCar.Delete(id);
+			break;
+		case 4:
+			car.Print();
+			cout << "Выберите машину: ";
+			cin >> id_car;
+			makeCar.Print(id_car);
+			break;
+		case 5:
+
+			assembly.Print();
+			cout << "Выберите Агрегат: ";
+			cin >> id_assem;
+			makeCar.Print(id_assem);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
 void for_Car()
 {
 	Car car;
@@ -336,6 +419,7 @@ void for_Car()
 		cout << "4. Вывести список машин" << endl;
 		cout << "5. Поиск машины по ID" << endl;
 		cout << "6. Поиск машины по имени" << endl;
+		cout << "7. Агрегат для машин " << endl;
 		cout << "0. Выйти" << endl;
 
 		cout << "\nВыберите действие: ";
@@ -412,6 +496,9 @@ void for_Car()
 			cout << "Введите имя машины для поиска: ";
 			getline(cin, name);
 			car.SearchByName(name);
+			break;
+		case 7:
+			for_MakeCar();
 			break;
 		case 0:
 			return;
@@ -570,7 +657,7 @@ void for_Assembly()
 	ServiceWorker serviceWorker;
 	Car car;
 	string name, date;
-	int id_SW, id_car;
+	int id_SW;
 	int a = 1, id;
 
 	while (a != 0)
@@ -708,6 +795,53 @@ void for_MakeAssembly()
 	}
 }
 
+void for_History()
+{
+	setlocale(LC_ALL, "ru");
+
+	History his;
+	Car car;
+	Assembly assem;
+	string date;
+	int a = 1, id;
+
+	while (a != 0)
+	{
+		cout << "\tУчет взаимозаменяемости" << endl;
+		cout << " 1 -Общий вывод" << endl;
+		cout << " 2 - Вывод по Машинам" << endl;
+		cout << " 3 - Вывод по date" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			system("cls");
+			his.Print();
+			break;
+		case 2:
+			system("cls");
+			car.Print();
+			cout << "Выберите машину: ";
+			cin >> id;
+			his.Print(id);
+			break;
+		case 3:
+			system("cls");
+			car.Print();
+			cout << "Введите дату: ";
+			cin >> date;
+			his.Print(date);
+			break;
+			break;
+		
+		default:
+			break;
+		}
+	}
+}
+
+
+
 int main()
 {
 	setlocale(LC_ALL, "ru");
@@ -727,6 +861,7 @@ int main()
 		cout << " 8 - Действия с Component " << endl;
 		cout << " 9 - Действия с Assembly " << endl;
 		cout << " 10 - Действия с MakeAssembly " << endl;
+		cout << " 11 - Учет взаимозаменяемости  " << endl;
 		cout << "exit 0" << endl;
 		cin >> a;
 		switch (a) {
@@ -759,6 +894,9 @@ int main()
 			break;
 		case(10):
 			for_MakeAssembly();
+			break;
+		case(11):
+			for_History();
 			break;
 		default:
 			break;
