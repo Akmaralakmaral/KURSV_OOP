@@ -137,6 +137,7 @@
     <ClCompile Include="Connect.cpp" />
     <ClCompile Include="Country.cpp" />
     <ClCompile Include="KURSV_OOP.cpp" />
+    <ClCompile Include="MakeAssembly.cpp" />
     <ClCompile Include="Manufacturer.cpp" />
     <ClCompile Include="Part.cpp" />
     <ClCompile Include="PartStoreWorker.cpp" />
@@ -149,6 +150,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Connect.h" />
     <ClInclude Include="Country.h" />
+    <ClInclude Include="MakeAssembly.h" />
     <ClInclude Include="Manufacturer.h" />
     <ClInclude Include="Part.h" />
     <ClInclude Include="PartStoreWorker.h" />

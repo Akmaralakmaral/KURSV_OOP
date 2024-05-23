@@ -12,6 +12,7 @@
 #include "Part.h"
 #include "Component.h"
 #include "Assembly.h"
+#include "MakeAssembly.h"
 
 
 void for_SW()
@@ -593,11 +594,8 @@ void for_Assembly()
 			serviceWorker.Print();
 			cout << "Введите ID работника сервиса: ";
 			cin >> id_SW;
-			cout << "Список автомобилей:" << endl;
-			car.Print();
-			cout << "Введите ID автомобиля: ";
-			cin >> id_car;
-			assembly.Insert(name, date, id_SW, id_car);
+			
+			assembly.Insert(name, date, id_SW);
 			break;
 		case 2:
 			system("cls");
@@ -613,11 +611,8 @@ void for_Assembly()
 			serviceWorker.Print();
 			cout << "Введите ID работника сервиса: ";
 			cin >> id_SW;
-			cout << "Список автомобилей:" << endl;
-			car.Print();
-			cout << "Введите ID автомобиля: ";
-			cin >> id_car;
-			assembly.Update(id, name, date, id_SW, id_car);
+			
+			assembly.Update(id, name, date, id_SW);
 			break;
 		case 3:
 			system("cls");
@@ -628,6 +623,84 @@ void for_Assembly()
 		case 4:
 			system("cls");
 			assembly.Print();
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void for_MakeAssembly()
+{
+	setlocale(LC_ALL, "ru");
+	MakeAssembly makeAssembly;
+	Assembly assembly;
+	Part part;
+	Component component;
+	int id_nameAssembly, id_part, quantity_part, id_component, quantity_component;
+	int a = 1, id;
+
+	while (a != 0)
+	{
+		cout << "\tСоздание сборки" << endl;
+		cout << " 1 - Добавить создание сборки" << endl;
+		cout << " 2 - Обновить информацию о создании сборки" << endl;
+		cout << " 3 - Удалить создание сборки" << endl;
+		cout << " 4 - Вывести список созданий сборок" << endl;
+		cin >> a;
+		switch (a)
+		{
+		case 1:
+			system("cls");
+			cout << "Список сборок:" << endl;
+			assembly.Print();
+			cout << "Введите ID сборки: ";
+			cin >> id_nameAssembly;
+			cout << "Список частей:" << endl;
+			part.Print();
+			cout << "Введите ID части: ";
+			cin >> id_part;
+			cout << "Введите количество частей: ";
+			cin >> quantity_part;
+			cout << "Список компонентов:" << endl;
+			component.Print();
+			cout << "Введите ID компонента: ";
+			cin >> id_component;
+			cout << "Введите количество компонентов: ";
+			cin >> quantity_component;
+			makeAssembly.Insert(id_nameAssembly, id_part, quantity_part, id_component, quantity_component);
+			break;
+		case 2:
+			system("cls");
+			cout << "Введите ID создания сборки, которую хотите обновить: ";
+			cin >> id;
+			cout << "Список сборок:" << endl;
+			assembly.Print();
+			cout << "Введите новый ID сборки: ";
+			cin >> id_nameAssembly;
+			cout << "Список частей:" << endl;
+			part.Print();
+			cout << "Введите новый ID части: ";
+			cin >> id_part;
+			cout << "Введите новое количество частей: ";
+			cin >> quantity_part;
+			cout << "Список компонентов:" << endl;
+			component.Print();
+			cout << "Введите новый ID компонента: ";
+			cin >> id_component;
+			cout << "Введите новое количество компонентов: ";
+			cin >> quantity_component;
+			makeAssembly.Update(id, id_nameAssembly, id_part, quantity_part, id_component, quantity_component);
+			break;
+		case 3:
+			system("cls");
+			cout << "Введите ID создания сборки, которую хотите удалить: ";
+			cin >> id;
+			makeAssembly.Delete(id);
+			break;
+		case 4:
+			system("cls");
+			makeAssembly.Print();
 			break;
 		default:
 			break;
@@ -653,6 +726,7 @@ int main()
 		cout << " 7 - Действия с Part " << endl;
 		cout << " 8 - Действия с Component " << endl;
 		cout << " 9 - Действия с Assembly " << endl;
+		cout << " 10 - Действия с MakeAssembly " << endl;
 		cout << "exit 0" << endl;
 		cin >> a;
 		switch (a) {
@@ -682,6 +756,9 @@ int main()
 			break;
 		case(9):
 			for_Assembly();
+			break;
+		case(10):
+			for_MakeAssembly();
 			break;
 		default:
 			break;
