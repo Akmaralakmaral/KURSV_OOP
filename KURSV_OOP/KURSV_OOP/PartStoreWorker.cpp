@@ -99,17 +99,3 @@ void PartStoreWorker::Print()
 		system("pause");
 	}
 }
-
-int PartStoreWorker::Check()
-{
-	return 0;
-}
-
-void PartStoreWorker::Print_by_id(int id)
-{
-}
-
-int PartStoreWorker::Get_id()
-{
-	return 0;
-}

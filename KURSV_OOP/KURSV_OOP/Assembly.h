@@ -11,8 +11,6 @@ private:
     vector<string> names;
     vector<string> date;
     vector<int> id_SW;
-    
-
 public:
     void Insert(string name, string date, int id_SW);
     void Update(int id, string name, string date, int id_SW);

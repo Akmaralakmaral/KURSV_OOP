@@ -14,7 +14,7 @@ void History::Print()
             INNER JOIN Assemblies AS OldAssemblies ON Histories.id_assembly_old = OldAssemblies.id\
 			INNER JOIN Cars ON Histories.id_car = Cars.id ;");
         result = pstmt->executeQuery();
-        cout << "ID\t Date \t Cars\t New \t Old" << endl;
+        cout << "ID\t Date \t\t\t Cars\t New \t Old" << endl;
         cout << "-----------------" << endl;
 
         while (result->next())
@@ -48,8 +48,8 @@ void History::Print(int id_car)
             WHERE Histories.id_car = ?;");
         pstmt->setInt(1, id_car);
         result = pstmt->executeQuery();
-        cout << "ID\t Date \t New \t Old" << endl;
-        cout << "-----------------" << endl;
+        cout << "ID\t Date\t\t\t New \t Old" << endl;
+        cout << "-----------------------------------------==" << endl;
 
         while (result->next())
         {

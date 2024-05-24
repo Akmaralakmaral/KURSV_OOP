@@ -9,12 +9,9 @@ private:
 	vector<string> number;
 public:
 	void Insert(string name, int experience, string number);
-	void Update(int id, string name, int experience, string number);
-	int Get_id();
+	void Update(int id, string name, int experience, string number);	
 	void Delete(int id);
-	int Check();
 	void Print();
-	void Print_by_id(int id);
 };
 
 

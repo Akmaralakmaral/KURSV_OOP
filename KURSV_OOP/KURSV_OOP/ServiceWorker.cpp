@@ -101,17 +101,3 @@ void ServiceWorker::Print()
 	}
 }
 
-void ServiceWorker::Print_by_id(int id)
-{
-
-}
-
-int ServiceWorker::Get_id()
-{
-	return 0;
-}
-
-int ServiceWorker::Check()
-{
-	return 0;
-}

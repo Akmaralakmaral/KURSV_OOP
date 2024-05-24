@@ -827,7 +827,6 @@ void for_History()
 			break;
 		case 3:
 			system("cls");
-			car.Print();
 			cout << "Введите дату: ";
 			cin >> date;
 			his.Print(date);
